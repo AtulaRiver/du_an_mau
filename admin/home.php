@@ -1,0 +1,1 @@
+<h1 style="max-width: 1200px;" class="container">Control Panel</h1>

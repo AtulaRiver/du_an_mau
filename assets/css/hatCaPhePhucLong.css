@@ -1,0 +1,392 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main  {
+
+}
+
+/* Begin: Header */
+
+#header-img {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#main #header-img img {
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 90px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+#header {
+    height: 41px;
+    box-shadow: 0px  0 5px #ccc;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    background-color: #fff;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li {
+    padding: 0 40px;
+}
+
+#nav > li > a {
+    text-transform: uppercase;
+    color: rgb(102, 102, 102);
+    line-height: 41px;
+    padding: 0 35px; 
+}
+
+#nav li a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#nav > li:hover > a {
+    color: rgb(12, 113, 61);
+    transition: all 0.2s linear;
+} 
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    min-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+.subnav li:hover a {
+    background-color: rgb(12, 113, 61);
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+}
+
+
+.subnav > li > a {
+    display: block;
+    color: rgb(102, 102, 102);
+    line-height: 35px;
+    padding: 5px 10px;
+}
+
+#header .search-btn {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#header .search-btn:hover {
+    color: rgb(12, 113, 61);
+}
+
+#header .search-icon {
+    line-height: 41px;
+}
+
+/* End: Header */
+
+/* Begin: Silder */
+#slider {
+    margin-top: 110px;
+    padding-top: 30%;
+    background: url("https://phuclong.com.vn/uploads/category/aa17dafb29b433-cphphclong3.jpg") top center / cover no-repeat; 
+}
+
+/* End: Silder */
+
+/* Begin: content */
+#content {
+    min-height: 1600px;
+}
+
+#content .page-heading,
+#content .text-heading {
+    text-align: center;
+    padding: 16px 15px;
+}
+
+.page-heading .nav-content .subnav-content {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.subnav-content > li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 25px;
+    margin: 0 3px;
+    color: #797979;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    font-family: 'Lora', serif;
+}
+.subnav-content .li-one > a {
+    color: rgb(12, 113, 61);
+    border-top: 1px solid rgb(12, 113, 61);
+    border-bottom: 1px solid rgb(12, 113, 61);
+}
+
+.subnav-content .li-one > a {
+    background-color: #fff !important;
+}
+
+.subnav-content > li:hover > a {
+    background-color: rgb(121, 121, 121, 0.1);
+    color: rgb(12, 113, 61);
+    transition: all 0.2s linear;
+} 
+
+.page-heading .first-heading li {
+    display: inline-block;
+}
+
+.first-heading li a {
+    text-decoration: none;
+    color: #B2B2B2;
+}
+
+.first-heading li > a:hover {
+    color: #F01B1A !important;
+    transition: all 0.2s linear;
+}
+
+#content .text-heading p {
+    color: rgb(12, 113, 61);
+    font-size: 36px;
+    margin: 0 20px;
+    text-transform: uppercase;
+    font-family: 'Lora', serif;
+}
+
+#content .img-heading img {
+    width: 300px;
+}
+
+#content .content-heading p,
+#content .show-img img {
+    display: block;
+    margin: auto;
+    padding: auto;
+}
+
+#content .content-heading p {
+    width: 950px;
+    height: 150px;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+#content .show-img img {
+    width: 800px;
+    margin-bottom: 70px;
+}
+
+.content-body {
+    margin-top: 50px;
+}
+
+.content-body .first-body,
+.content-body .second-body,
+.content-body .third-body {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 1000px;
+    margin-bottom: 80px;
+}
+
+.first-body .first-content {
+    margin-right: 50px;
+}
+
+.third-body .first-content {
+    margin-right: 50px;
+}
+
+.first-body .first-content {
+    width: 450px;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.second-body .second-content {
+    width: 600px;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.third-body .first-content {
+    width: 540px;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.first-body .first-content,
+.second-body .first-content,
+.third-body .first-content {
+    float: left;
+}
+
+.second-body .second-content,
+.first-body .second-content,
+.third-body .second-content {
+    float: right;
+}
+
+.content-body h2 {
+    margin: 20px 0;
+}
+
+.content-body p {
+    line-height: 22.4px;
+    margin-top: 40px;
+}
+
+.content-body img {
+    max-width: 500px;
+}
+
+.first-content, .second-content {
+    margin-bottom: 20px;
+}
+
+#content > .content-body img {
+    height: 333px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 500px;
+}
+
+/* End: content */
+
+#footer {
+    margin-top: 35px ;
+    display: flex;
+    justify-content: center;
+}
+
+#footer .text-footer {
+    font-size: 14px;
+    width: 500px;
+}
+
+#footer .email-footer {
+    margin-left: 30px;
+}
+
+#footer .email-footer b {
+    font-size: 14px;
+
+}
+
+#footer .email-footer input {
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid rgb(12, 113, 61);
+    padding: 16px 12px;
+    margin-top: 8px;
+}
+#footer .email-footer a {
+    text-decoration: none;
+    color: rgb(12, 113, 61);
+    text-transform: uppercase;
+    border: 1px solid rgb(12, 113, 61);
+    border-radius: 5px;
+    padding: 7px 12px;
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+
+#footer .email-footer a:hover {
+    color: white;
+    background-color: rgb(12, 113, 61);
+    transition: all 0.2s linear;
+}
+
+#footer .email-footer p {
+    font-size: 14px;
+} 
+
+#footer .link-footer {
+    margin-left: 80px;
+    line-height: 131px;
+}
+
+#footer .link-footer li {
+    display: inline-block;
+    margin: 10px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+#footer .link-footer a {
+    text-decoration: none;
+}
+
+#footer .link-footer i:hover {
+    opacity: 1;
+    transition: all 0.2s linear;
+}
+
+#footer .link-footer i {
+    color: #000;
+    opacity: 0.5;
+}
+
+#original {
+    background-color: #000;
+    height: 10px;
+}
+
+#original p {
+    color: #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 10px;
+    font-size: 8px;
+}

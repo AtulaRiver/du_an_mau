@@ -1,0 +1,336 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {}
+
+/* Begin: Header */
+
+#header-img {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#main #header-img img {
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 90px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+#header {
+    height: 41px;
+    box-shadow: 0px 0 5px #ccc;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    background-color: #fff;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav>li {
+    padding: 0 40px;
+}
+
+#nav>li>a {
+    text-transform: uppercase;
+    color: rgb(102, 102, 102);
+    line-height: 41px;
+    padding: 0 35px;
+}
+
+#nav li a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#nav>li:hover>a {
+    color: rgb(12, 113, 61);
+    transition: all 0.2s linear;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    min-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+.subnav li:hover a {
+    background-color: rgb(12, 113, 61);
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+}
+
+
+.subnav>li>a {
+    display: block;
+    color: rgb(102, 102, 102);
+    line-height: 35px;
+    padding: 5px 10px;
+}
+
+#header .search-btn {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#header .search-btn:hover {
+    color: rgb(12, 113, 61);
+}
+
+#header .search-icon {
+    line-height: 41px;
+}
+
+/* End: Header */
+
+
+#slider {
+    margin-top: 110px;
+}
+
+#slideshow {
+    overflow: hidden;
+    height: 400px;
+    width: 1300px;
+    margin: 0 auto;
+  }
+ .slide-wrapper {
+    width: 2912px;
+    -webkit-animation: slide 14s ease infinite;
+  }
+ .slide {
+    float: left;
+    height: 400px;
+    width: 1300px;
+  }
+ @-webkit-keyframes slide {
+    20% {margin-left: 0px;}
+    30% {margin-left: -1300px;}
+    50% {margin-left: -1300px;}
+    60% {margin-left: -1300px;}
+    80% {margin-left: -1300px;}
+  }
+
+#content {
+    height: 1400px;
+    margin-top: 10px;
+    padding: 30%;
+    background: url("https://phuclong.com.vn/uploads/banner/6313d6d02ac48e-2949308c6b040fcoffeecopy.png") right bottom no-repeat;
+    position: relative;
+}
+
+.first-content .first-img img {
+    position: absolute;
+    max-width: 530px;
+    top: 100px;
+    left: 250px;
+    margin-right: 100px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 20px 0 rgb(107 107 107 / 27%);
+}
+
+.first-content .text-content {
+    position: absolute;
+    right: 15%;
+    top: 13%;
+    width: 470px;
+}
+
+.second-content .text-content {
+    position: absolute;
+    left: 15%;
+    bottom: 20%;
+    width: 470px;
+}
+
+.first-content .text-content h3,
+.second-content .text-content h3 {
+    color: #0C713D;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 50px;
+}
+
+.first-content .text-content p,
+.second-content .text-content p {
+    width: 450px;
+    font-size: 14px;
+    text-align: justify;
+    margin: 0 0 20px;
+}
+
+.btn-text {
+    text-decoration: none;
+    color: #0C713D;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 7px 12px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1.5px solid rgb(12, 113, 61);
+    border-radius: 3px;
+}
+
+.btn-text:hover {
+    background-color: rgb(12, 113, 61);
+    color: #fff;
+    transition: all 0.2s linear;
+}
+
+.second-content .second-img img {
+    max-width: 320px;
+    position: absolute;
+    right: 30%;
+    bottom: 10%;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 20px 0 rgb(107 107 107 / 27%);
+}
+
+#map {
+    background-color: rgb(12, 113, 61);
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#map .text-map {
+    text-align: center;
+    margin: 8px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+#map iframe {
+    margin: auto;
+    display: block;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgb(107 107 107 / 27%);
+}
+
+#footer {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+#footer .text-footer {
+    font-size: 14px;
+    width: 500px;
+}
+
+#footer .email-footer {
+    margin-left: 30px;
+}
+
+#footer .email-footer b {
+    font-size: 14px;
+
+}
+
+#footer .email-footer input {
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid rgb(12, 113, 61);
+    padding: 16px 12px;
+    margin-top: 8px;
+}
+
+#footer .email-footer a {
+    text-decoration: none;
+    color: rgb(12, 113, 61);
+    text-transform: uppercase;
+    border: 1px solid rgb(12, 113, 61);
+    border-radius: 5px;
+    padding: 7px 12px;
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+
+#footer .email-footer a:hover {
+    color: white;
+    background-color: rgb(12, 113, 61);
+    transition: all 0.2s linear;
+}
+
+#footer .email-footer p {
+    font-size: 14px;
+}
+
+#footer .link-footer {
+    margin-left: 80px;
+    line-height: 131px;
+}
+
+#footer .link-footer li {
+    display: inline-block;
+    margin: 10px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+#footer .link-footer a {
+    text-decoration: none;
+}
+
+#footer .link-footer i:hover {
+    opacity: 1;
+    transition: all 0.2s linear;
+}
+
+#footer .link-footer i {
+    color: #000;
+    opacity: 0.5;
+}
+
+#original {
+    background-color: #000;
+    height: 10px;
+}
+
+#original p {
+    color: #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 10px;
+    font-size: 8px;
+}
