@@ -1,25 +1,55 @@
-<?php 
-    function insert_danhmuc($tenloai) {
-        $sql = "insert into danhmuc(name) values('$tenloai')";
-        pdo_execute($sql);
+<?php
+function insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm)
+{
+    $sql = "insert into sanpham(name, price, img, mota, iddm) values('$tensp', '$giasp', '$hinh', '$mota', '$iddm')";
+    pdo_execute($sql);
+}
+
+function delete_sanpham($id)
+{
+    $sql = "delete from sanpham where id = " . $id;
+    pdo_query($sql);
+}
+
+function loadall_sanpham($kyw="", $iddm=0)
+{
+    $sql = "select * from sanpham where 1";
+    if($kyw != "") {
+        $sql.= " and name like '%".$kyw."%'";
     }
-    
-    function delete_danhmuc($id) {
-        $sql = "delete from danhmuc where id = " . $id;
-        pdo_query($sql);
+    if($iddm > 0) {
+        $sql.= " and iddm = '".$iddm."'";
+    }
+    $sql.=" order by id desc";
+    return $listsanpham = pdo_query($sql);
+}
+function loadall_sanpham_top10()
+{
+    $sql = "select * from sanpham where 1 order by luotxem desc limit 0,10";
+
+    return $listsanpham = pdo_query($sql);
+}
+function loadall_sanpham_home()
+{
+    $sql = "select * from sanpham where 1 order by id desc limit 0,9";
+
+    return $listsanpham = pdo_query($sql);
+}
+
+function loadone_sanpham($id)
+{
+    $sql = "select * from sanpham where id = " . $id;
+    return $sp = pdo_query_one($sql);
+}
+
+function update_sanpham($id, $iddm, $tensp, $giasp, $mota, $hinh)
+{
+    if($hinh!="") {
+        $sql = "update sanpham set iddm = '" .$iddm."', name = '" .$tensp."', price = '" .$giasp."', mota = '" .$mota."', img = '" .$hinh."' where id =" .$id;
+    }
+    else {
+        $sql = "update sanpham set iddm = '" .$iddm."', name = '" .$tensp."', price = '" .$giasp."', mota = '" .$mota."' where id =" .$id;
     }
 
-    function loadall_danhmuc() {
-        $sql = "select * from danhmuc order by id desc";
-        return $listdanhmuc = pdo_query($sql);
-    }
-
-    function loadone_danhmuc($id) {
-        $sql = "select * from danhmuc where id = " . $id;
-        return $dm = pdo_query_one($sql);
-    }
-
-    function update_danhmuc($tenloai, $id) {
-        $sql = "update danhmuc set name ='" . $tenloai . "'where id = " . $id;
-        pdo_execute($sql);
-    }
+    pdo_execute($sql);
+}
