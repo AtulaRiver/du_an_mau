@@ -17,30 +17,44 @@
 </div>
 <div id="big-container">
     <div class="container">
-        <div class="left">
-            <div class="box">
+        <div class="left mt-5">
+            <div class="card mb-5" style="width: 70%;">
                 <?php extract($onesp); ?>
-                <div class="box-title"><?= $name ?></div>
-                <div class="box-content">
+                <h5 class="card-header" style="background-color:  rgb(12, 113, 61); color: #fff"><?= $name ?></h5>
+                <div class="card-body box-content">
                     <?php
-
                     $img = $img_path . $img;
                     echo '<img src="' . $img . ' "><br>';
                     echo $mota;
                     ?>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-            <div class="box">
-                <div class="box-title">Bình luận</div>
-                <div class="box-content"></div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#binhluan").load("view/binhluan/binhluanform.php", {
+                        idpro: <?= $id ?>
+                    });
+                });
+            </script>
+            <div id="binhluan">
+
             </div>
-            <div class="box">
-                <div class="box-title">Sản phẩm cùng loại</div>
-                <div class="box-content"></div>
+            <div class="card my-5" style="width: 70%;">
+                <h5 class="card-header" style="background-color:  rgb(12, 113, 61); color: #fff">Sản phẩm cùng loại</h5>
+                <div class="card-body box-content">
+                    <?php foreach ($sp_cungloai as $sp_cungloai) : ?>
+                        <?php
+                        extract($sp_cungloai);
+                        $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                        ?>
+                        <li><a href="<?= $linksp ?>"><?= $name ?></a></li>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
-
-
     </div>
 
     <?php include "boxright.php"; ?>

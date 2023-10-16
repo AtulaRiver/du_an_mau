@@ -1,4 +1,4 @@
-<div class="right">
+<div style="width: 280px;" class="right mt-5">
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -8,27 +8,57 @@
             </h2>
             <div id="list-1" class="accordion-collapse collapse show" data-bs-parent="#list-1">
                 <div class="accordion-body">
-                    <form class="box-right" action="#" method="post">
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        extract($_SESSION['user']);
+                    ?>
+
                         <div>
-                            <label for="" class="form-label" name="user">Tên đăng nhập:</label>
-                            <input type="text" class="form-control" id="user">
+                            <label for="" class="form-label" name="user">Xin chào, </label>
+                            <?= $user ?>
                         </div>
-                        <div>
-                            <label for="" class="form-label" name="pass">Mật khẩu:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div> <br>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input">
-                            <label class="form-check-label" for="">Ghi nhớ tài khoản ?</label>
-                        </div>
-                        <button style="display: block; margin: auto;" type="submit" class="btn my-3 sign-in">Đăng Nhập</button>
                         <li>
-                            <a href="">Quên mật khẩu</a>
+                            <a href="index.php?act=quenmk">Quên mật khẩu</a>
                         </li>
                         <li>
-                            <a href="">Đăng ký thành viên</a>
+                            <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                         </li>
-                    </form>
+                        <?php if($role == 1): ?>
+                        <li>
+                            <a href="admin/index.php">Đăng nhập Admin</a>
+                        </li>
+                        <?php endif; ?>
+                        <li>
+                            <a href="index.php?act=thoat">Thoát</a>
+                        </li>
+
+                    <?php
+
+                    } else {
+
+                    ?>
+                        <form class="box-right" action="index.php?act=dangnhap" method="post">
+                            <div>
+                                <label for="" class="form-label">Tên đăng nhập:</label>
+                                <input type="text" class="form-control" name="user" id="user">
+                            </div>
+                            <div>
+                                <label for="" class="form-label">Mật khẩu:</label>
+                                <input type="password" class="form-control" name="pass" id="exampleInputPassword1">
+                            </div> <br>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input">
+                                <label class="form-check-label" for="">Ghi nhớ tài khoản ?</label>
+                            </div>
+                            <input style="display: block; margin: auto;" name="dangnhap" type="submit" class="btn my-3 sign-in" value="Đăng nhập"></input>
+                            <li>
+                                <a href="index.php?act=quenmk">Quên mật khẩu</a>
+                            </li>
+                            <li>
+                                <a href="index.php?act=dangky">Đăng ký thành viên</a>
+                            </li>
+                        </form>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -69,8 +99,13 @@
                                 </li> -->
                         <?php endforeach; ?>
                         <li class="list-group-item">
-                            <form action="" method="post">
-                                <input type="text" class="form-control" placeholder="Nhập từ khoá tìm kiếm">
+                            <form action="index.php?act=sanpham" method="post">
+                                <div class="col-lg-9" style="display: inline-block;">
+                                    <input type="text" name="kyw" class="form-control" placeholder="Nhập từ khoá">
+                                </div>
+                                <div class="col-lg-3" style="float: right; display: inline-block; ">
+                                    <input style="width: 56px; padding-left: 7px; font-size: 14px; height: 37px; margin-left: 8px;" class="btn btn-primary" type="submit" name="timkiem" value="Search">
+                                </div>
                             </form>
                         </li>
                     </ul>
@@ -99,12 +134,12 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4 top10img">
-                                    <img src="<?= $img ?>" class="img-fluid rounded-start" alt="...">
+                                    <img style="max-height: 50px;" src="<?= $img ?>" class="img-fluid rounded-start mt-3 ms-3" alt="">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h6 class="card-title"><a href="<?= $linksp ?>"><?= $name ?></a></h6>
-                                        <p class="card-text">70.000đ</p>
+                                        <p class="card-text"><?= $price ?>đ</p>
                                     </div>
                                 </div>
                             </div>

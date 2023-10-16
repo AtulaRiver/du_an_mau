@@ -391,7 +391,7 @@ html {
     font-weight: 900;
 }
 
-.item-infor .btn a {
+.item-infor .btn .cart {
     color: rgb(12, 113, 61);
     border: 1px solid rgb(12, 113, 61);
     padding: 8px 20px;
@@ -525,7 +525,7 @@ html {
 
 .right {
     float: left;
-    width: 17%;
+    width: 22%;
     margin-left: -280px;
 }
 

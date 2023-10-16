@@ -15,7 +15,8 @@
         </div>
     </div>
 </div>
-<div id="big-container">
+
+<div id="big-container" style="height: 2400px;">
     <div class="container">
         <div class="left">
             <?php
@@ -32,13 +33,19 @@
                 <a href="' . $linksp . '"><img src="' . $hinh . '" alt=""></a>
                 <div class="item-infor">
                     <div class="name">
-                    <a href="' . $linksp . '"><p>' . $name . '</p></a>
+                    <a style="text-decoration:none;" href="' . $linksp . '"><p>' . $name . '</p></a>
                     </div>
                     <div class="price">
                         <p>' . $price . '</p>
                     </div>
                     <div class="btn">
-                        <a href="' . $linksp . '">Đặt hàng</a>
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <input type="hidden" name="name" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input style="margin-left: -10px; font-size: 14px" class="btn btn-success" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                        </form>
                     </div>
                 </div>
               </div>';
@@ -53,7 +60,13 @@
                         <p>' . $price . '</p>
                     </div>
                     <div class="btn">
-                        <a href="' . $linksp . '">Đặt hàng</a>
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <input type="hidden" name="name" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input style=" font-size: 12px" class="btn btn-success" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                        </form>
                     </div>
                 </div>
               </div>';
@@ -74,3 +87,4 @@
 
         <?php include "boxright.php"; ?>
     </div>
+</div>

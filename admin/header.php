@@ -20,7 +20,7 @@
     <div id="main">
         <!-- img header -->
         <div id="header-img">
-            <a href="home.html"><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
+            <a href=""><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
         </div>
 
         <div id="header">
@@ -34,7 +34,7 @@
                     <a href="index.php?act=addsp">Hàng hoá</a>
                 </li>
                 <li>
-                    <a href="index.php?act=adskh">Khách hàng</a>
+                    <a href="index.php?act=dskh">Khách hàng</a>
                 </li>
                 <li><a href="index.php?act=dsbl">Bình luận</a></li>
                 <li><a href="index.php?act=thongke">Thống kê</a></li>
