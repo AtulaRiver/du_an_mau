@@ -3,6 +3,7 @@
         <tr>
             <th></th>
             <th>Mã Tài Khoản</th>
+            <th>Họ Tên</th>
             <th>Tên Đăng Nhập</th>
             <th>Mật Khẩu</th>
             <th>Email</th>
@@ -20,6 +21,7 @@
             <tr>
                 <td><input type="checkbox" name="" id=""></td>
                 <td><?= $id ?></td>
+                <td><?= $name ?></td>
                 <td><?= $user ?> </td>
                 <td><?= $pass ?> </td>
                 <td><?= $email ?> </td>

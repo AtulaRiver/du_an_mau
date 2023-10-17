@@ -1,7 +1,7 @@
 <?php
-function insert_taikhoan($email, $user, $pass)
+function insert_taikhoan($email, $user, $name, $pass)
 {
-    $sql = "insert into taikhoan(email, user, pass) values('$email', '$user', '$pass')";
+    $sql = "insert into taikhoan(email, user, name, pass) values('$email', '$user', '$name', '$pass')";
     pdo_execute($sql);
 }
 
@@ -19,9 +19,9 @@ function checkemail($email)
     return $tk;
 }
 
-function update_taikhoan($id, $user, $email, $pass, $address, $tel)
+function update_taikhoan($id, $user, $name, $email, $pass, $address, $tel)
 {
-    $sql = "update taikhoan set user = '" . $user . "', pass = '" . $pass . "', email = '" . $email . "', address = '" . $address . "', tel = '" . $tel . "' where id =" . $id;
+    $sql = "update taikhoan set user = '" . $user . "', name = '" . $name . "', pass = '" . $pass . "', email = '" . $email . "', address = '" . $address . "', tel = '" . $tel . "' where id =" . $id;
 
     pdo_execute($sql);
 }

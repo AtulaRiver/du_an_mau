@@ -20,13 +20,12 @@
     <div id="main">
         <!-- img header -->
         <div id="header-img">
-            <a href=""><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
+            <a href="../index.php"><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
         </div>
 
         <div id="header">
             <!-- Begin: Nav -->
             <ul id="nav">
-                <li><a style="color: rgb(12, 113, 61);" href="index.php">Trang chủ</a></li>
                 <li>
                     <a href="index.php?act=adddm">Danh Mục</a>
                 </li>
@@ -38,6 +37,7 @@
                 </li>
                 <li><a href="index.php?act=dsbl">Bình luận</a></li>
                 <li><a href="index.php?act=thongke">Thống kê</a></li>
+                <li><a href="index.php?act=listbill">DS đơn hàng</a></li>
                 <li class="search-btn">
                     <i class="search-icon ti-search"></i>
                 </li>

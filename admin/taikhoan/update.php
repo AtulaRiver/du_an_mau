@@ -9,11 +9,6 @@ if (is_array($taikhoan)) {
         <h5 class="card-header" style="text-transform: uppercase;">Cập Nhật Tài Khoản</h5>
         <div class="card-body">
             <form action="index.php?act=updatetk" method="post">
-                <div>
-                    <label class="" for=""><b>Role:</b></label>
-                    <input type="text" name="role" class="form-control" id="" value="<?= $role ?>">
-                </div>
-               
                 <div class="my-3">
                     <label class="" for=""><b>Tên đăng nhập:</b></label>
                     <input type="text" name="user" class="form-control" id="" value="<?= $user ?>">
@@ -21,6 +16,10 @@ if (is_array($taikhoan)) {
                 <div class="my-3">
                     <label class="" for=""><b>Mật khẩu:</b></label>
                     <input type="text" name="pass" class="form-control" id="" value="<?= $pass ?>">
+                </div>
+                <div class="my-3">
+                    <label class="" for=""><b>Họ tên:</b></label>
+                    <input type="text" name="name" class="form-control" id="" value="<?= $name ?>">
                 </div>
                 <div class="my-3">
                     <label class="" for=""><b>Email:</b></label>

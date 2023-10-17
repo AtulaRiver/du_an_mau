@@ -5,6 +5,7 @@ include '../model/danhmuc.php';
 include '../model/sanpham.php';
 include '../model/taikhoan.php';
 include '../model/binhluan.php';
+include '../model/cart.php';
 //* controller
 
 if (isset($_GET['act'])) {
@@ -134,9 +135,10 @@ if (isset($_GET['act'])) {
         case 'dangky':
             if (isset($_POST['dangky']) && $_POST['dangky']) {
                 $email = $_POST['email'];
+                $email = $_POST['email'];
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                insert_taikhoan($email, $user, $pass);
+                insert_taikhoan($email, $user, $name, $pass);
                 $thongbao = "Tạo tài khoản thành công";
             }
             include "taikhoan/add.php";
@@ -153,11 +155,12 @@ if (isset($_GET['act'])) {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id = $_POST['id'];
                 $user = $_POST['user'];
+                $name = $_POST['name'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
                 $address = $_POST['address'];
                 $tel = $_POST['tel'];
-                update_taikhoan($id, $user, $email, $pass, $address, $tel);
+                update_taikhoan($id, $user, $name, $email, $pass, $address, $tel);
                 $thongbao = "Cập nhật thành công!";
             }
             $listtaikhoan = loadall_taikhoan();
@@ -183,6 +186,52 @@ if (isset($_GET['act'])) {
             }
             $listbinhluan = loadall_binhluan(0);
             include 'binhluan/list.php';
+            break;
+
+        case 'listbill':
+            if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include 'bill/list.php';
+            break;
+
+        case 'suabill':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $bill = loadone_bill($_GET['id']);
+            }
+            include 'bill/update.php';
+            break;
+
+        case 'updatebill':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $tinhtrang = $_POST['tinhtrang'];
+                update_bill($id, $tinhtrang);
+                $thongbao = "Cập nhật thành công!";
+            }
+            if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include 'bill/list.php';
+            break;
+
+        case 'xoabill':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                delete_bill($_GET['id']);
+            }
+            if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include 'bill/list.php';
             break;
 
         default:

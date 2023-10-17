@@ -26,11 +26,13 @@
                 <input name="user" type="text" class="form-control" value="<?= $user ?>"> <br>
                 <label for="">Mật khẩu:</label>
                 <input name="pass" type="password" class="form-control" value="<?= $pass ?>"> <br>
+                <label for="">Họ tên:</label>
+                <input name="name" type="text" class="form-control" value="<?= $name ?>"> <br>
                 <label for="">Địa chỉ:</label>
                 <input name="address" type="text" class="form-control" value="<?= $address ?>"> <br>
                 <label for="">Điện thoại:</label>
                 <input name="tel" type="text" class="form-control" value="<?= $tel ?>"> <br>
-                <input type="hidden" name="id" value=<?= $id ?>>
+                <input type="hidden" name="id" value="<?= $id ?>">
                 <input type="submit" class="btn btn-primary" name="capnhat" value="Cập nhật">
                 <input type="reset" class="btn btn-secondary" value="Nhập lại">
             </form>

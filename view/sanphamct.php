@@ -1,16 +1,13 @@
 <div id="content">
     <div class="page-heading">
         <div class="text-heading">
-            <p style="margin-top: 400px;">Trang chủ</p>
+            <p style="margin-top: 400px;">Chi tiết sản phẩm</p>
         </div>
         <div class="img-heading">
             <img src="/assets/img/Opera Snapshot_2023-02-11_163927_phuclong.com.vn.png" alt="">
         </div>
         <div class="nav-content">
             <ul class="subnav-content">
-                <li class="li-one"><a href="./tra.html">Thức uống</a></li>
-                <li><a href="./snack.html">Snacks</a></li>
-                <li><a href="./bakery.html">BAKERY</a></li>
             </ul>
         </div>
     </div>
@@ -27,8 +24,6 @@
                     echo '<img src="' . $img . ' "><br>';
                     echo $mota;
                     ?>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

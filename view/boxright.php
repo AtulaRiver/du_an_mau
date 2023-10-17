@@ -12,11 +12,13 @@
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
                     ?>
-
                         <div>
                             <label for="" class="form-label" name="user">Xin chào, </label>
                             <?= $user ?>
                         </div>
+                        <li>
+                            <a href="index.php?act=mybill">Đơn hàng của tôi</a>
+                        </li>
                         <li>
                             <a href="index.php?act=quenmk">Quên mật khẩu</a>
                         </li>

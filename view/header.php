@@ -21,7 +21,7 @@
     <div id="main">
         <!-- img header -->
         <div id="header-img">
-            <a href="home.html"><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
+            <a href="index.php"><img src="https://phuclong.com.vn/images/logo_2.png" alt=""></a>
         </div>
 
         <div id="header">
@@ -30,10 +30,6 @@
                 <li><a style="color: rgb(12, 113, 61);" href="index.php">Trang chủ</a></li>
                 <li>
                     <a href="index.php">Thức uống</a>
-                    <ul class="subnav" style="min-width: 200px;">
-                        <li><a href="./snack.html">Snacks</a></li>
-                        <li><a href="./bakery.html">Bakery</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="index.php?act=gioithieu">Giới thiệu</a>

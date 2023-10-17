@@ -17,6 +17,8 @@
             <form class="col-lg-8" action="index.php?act=dangky" method="post">
                 <label for="">Email:</label> <br>
                 <input name="email" type="email" class="form-control"> <br>
+                <label for="">Họ tên:</label> <br>
+                <input name="name" type="text" class="form-control"> <br>
                 <label for="">Tên đăng nhập</label> <br>
                 <input name="user" type="text" class="form-control"> <br>
                 <label for="">Mật khẩu:</label>
