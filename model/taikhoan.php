@@ -25,6 +25,12 @@ function update_taikhoan($id, $user, $name, $email, $pass, $address, $tel)
 
     pdo_execute($sql);
 }
+function update_matkhau($id, $user, $email, $pass)
+{
+    $sql = "update taikhoan set user = '" . $user . "', pass = '" . $pass . "', email = '" . $email . "' where id =" . $id;
+
+    pdo_execute($sql);
+}
 
 function loadall_taikhoan()
 {

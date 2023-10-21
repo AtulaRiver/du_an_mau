@@ -10,7 +10,7 @@
 </div>
 <div id="big-container">
     <div class="container">
-        <div class="left">
+        <div class="left" style="height: 1840px;">
             <?php
             $i = 0;
             echo '<div class="item mt-5">';
@@ -18,7 +18,7 @@
                 extract($sp);
                 $linksp = "index.php?act=sanphamct&idsp=" . $id;
                 $hinh = $img_path . $img;
-
+                
                 if ($i == 0) {
                     echo '<div class="big-item">
                          <span class="new">Món Mới</span>
@@ -28,11 +28,17 @@
                              <a style="text-decoration:none;" href="' . $linksp . '"><p>' . $name . '</p></a>
                              </div>
                              <div class="price">
-                                 <p>' . $price . '</p>
+                                 <p>' . number_format($price, 0, ',', '.') . 'đ</p>
                              </div>
                              <div class="btn">
-                                 <a href="' . $linksp . '">Đặt hàng</a>
-                             </div>
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <input type="hidden" name="name" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input style="margin-left: -10px; font-size: 14px" class="btn btn-success" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                        </form>
+                    </div>
                          </div>
                        </div>';
                 } else {
@@ -43,11 +49,17 @@
                              <a style="text-decoration:none;" href="' . $linksp . '"><p style="color: #000; font-size: 16px;">' . $name . '</p></a>
                              </div>
                              <div class="price">
-                                 <p>' . $price . '</p>
+                                 <p>' . number_format($price, 0, ',', '.') . 'đ</p>
                              </div>
                              <div class="btn">
-                                 <a href="' . $linksp . '">Đặt hàng</a>
-                             </div>
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <input type="hidden" name="name" value="' . $name . '">
+                            <input type="hidden" name="img" value="' . $img . '">
+                            <input type="hidden" name="price" value="' . $price . '">
+                            <input style=" font-size: 12px" class="btn btn-success" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                        </form>
+                    </div>
                          </div>
                        </div>';
                 }

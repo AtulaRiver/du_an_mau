@@ -21,6 +21,7 @@
 
             </table>
             <a href="index.php?act=bill"><input type="button" value="Tiếp tục đặt hàng" class="btn btn-success"></a>
+            <a href="index.php?act=index"><input type="button" value="Trở về trang chủ" class="btn btn-primary"></a>
         </div>
     </div>
 

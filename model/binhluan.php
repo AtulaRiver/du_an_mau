@@ -9,12 +9,13 @@ function insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan)
 function loadall_binhluan($idpro)
 {
 
-    $sql = "select * from binhluan where 1";
-    if ($idpro > 0) {
-        $sql .= " and idpro = '" . $idpro . "'";
-    } else {
-        $sql .= " order by id desc";
-    }
+    $sql = "select bl.noidung, bl.ngaybinhluan, tk.name 
+    from binhluan bl
+    join taikhoan tk on bl.iduser = tk.id
+    join sanpham sp on bl.idpro = sp.id
+    where sp.id = $idpro;
+    ";
+    return pdo_query($sql);
 
     return $listbinhluan = pdo_query($sql);
 }
@@ -23,4 +24,8 @@ function delete_binhluan($id)
 {
     $sql = "delete from binhluan where id = " . $id;
     pdo_query($sql);
+}
+
+function get_binhluan($idsp) {
+
 }

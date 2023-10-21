@@ -4,12 +4,12 @@
             <p style="margin-top: 440px;">Trang chủ</p>
         </div>
         <div class="img-heading">
-            <img src="/assets/img/Opera Snapshot_2023-02-11_163927_phuclong.com.vn.png" alt="">
+            <img src="https://phuclong.com.vn/images/icon_tealeaves.png" alt="">
         </div>
     </div>
 </div>
 
-<div id="big-container" style="height: 2400px;">
+<div id="big-container" style="height: 2550px;">
     <div class="container">
         <div class="left">
             <?php
@@ -29,7 +29,7 @@
                     <a style="text-decoration:none;" href="' . $linksp . '"><p>' . $name . '</p></a>
                     </div>
                     <div class="price">
-                        <p>' . $price . 'đ</p>
+                        <p>' . number_format($price, 0, ',', '.') . 'đ</p>
                     </div>
                     <div class="btn">
                         <form action="index.php?act=addtocart" method="post">
@@ -50,7 +50,7 @@
                     <a style="text-decoration:none;" href="' . $linksp . '"><p style="color: #000; font-size: 16px;">' . $name . '</p></a>
                     </div>
                     <div class="price">
-                        <p>' . $price . 'đ</p>
+                        <p>' . number_format($price, 0, ',', '.') . 'đ</p>
                     </div>
                     <div class="btn">
                         <form action="index.php?act=addtocart" method="post">
@@ -67,7 +67,7 @@
 
                 $i += 1;
 
-                if ($i == 2 || $i == 5 || $i == 8) {
+                if ($i == 2 || $i == 5 || $i == 8 || $i == 11 || $i == 14) {
                     echo '</div><div class="item mt-5">';
                 }
             }

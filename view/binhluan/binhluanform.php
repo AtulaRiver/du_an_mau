@@ -25,8 +25,8 @@ $dsbl = loadall_binhluan($idpro);
                 <?php foreach ($dsbl as $bl) : ?>
                     <?php extract($bl); ?>
                     <tr>
+                        <td><?= $name ?></td>
                         <td><?= $noidung ?></td>
-                        <td><?= $iduser ?></td>
                         <td><?= $ngaybinhluan ?></td>
                     </tr>
                     
@@ -35,7 +35,7 @@ $dsbl = loadall_binhluan($idpro);
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="idpro" value="<?= $idpro ?>">
                 <div class="col-lg-10" style="display: inline-block;">
-                    <input type="text" name="noidung" class="form-control">
+                    <input type="text" name="noidung" class="form-control" placeholder="Nhập bình luận...">
                 </div>
                 <div class="col-lg-2" style="float: right; display: inline-block; ">
                     <input style="width: 140px; padding-left: 7px; font-size: 14px; height: 37px; margin-left: 8px;" class="btn btn-primary" type="submit" name="guibinhluan" value="Gửi bình luận">
@@ -43,8 +43,8 @@ $dsbl = loadall_binhluan($idpro);
             </form>
             <?php
             if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
-                $noidung = $_POST['noidung'];
                 $idpro = $_POST['idpro'];
+                $noidung = $_POST['noidung'];
                 $iduser = $_SESSION['user']['id'];
                 $ngaybinhluan = date('h:i:sa d/m/Y');
                 insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);

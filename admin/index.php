@@ -6,6 +6,7 @@ include '../model/sanpham.php';
 include '../model/taikhoan.php';
 include '../model/binhluan.php';
 include '../model/cart.php';
+include '../model/thongke.php';
 //* controller
 
 if (isset($_GET['act'])) {
@@ -232,6 +233,16 @@ if (isset($_GET['act'])) {
             }
             $listbill = loadall_bill($kyw, 0);
             include 'bill/list.php';
+            break;
+        
+        case 'thongke':
+            $dsthongke = load_thongke_sanpham_danhmuc();
+            include "thongke/list.php";
+            break;
+
+        case 'bieudo':
+            $dsthongke = load_thongke_sanpham_danhmuc();
+            include "thongke/bieudo.php";
             break;
 
         default:

@@ -25,10 +25,13 @@
                         <li>
                             <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                         </li>
-                        <?php if($role == 1): ?>
                         <li>
-                            <a href="admin/index.php">Đăng nhập Admin</a>
+                            <a href="index.php?act=doimk">Đổi mật khẩu</a>
                         </li>
+                        <?php if ($role == 1) : ?>
+                            <li>
+                                <a href="admin/index.php">Đăng nhập Admin</a>
+                            </li>
                         <?php endif; ?>
                         <li>
                             <a href="index.php?act=thoat">Thoát</a>
@@ -53,9 +56,11 @@
                                 <label class="form-check-label" for="">Ghi nhớ tài khoản ?</label>
                             </div>
                             <input style="display: block; margin: auto;" name="dangnhap" type="submit" class="btn my-3 sign-in" value="Đăng nhập"></input>
+
                             <li>
                                 <a href="index.php?act=quenmk">Quên mật khẩu</a>
                             </li>
+
                             <li>
                                 <a href="index.php?act=dangky">Đăng ký thành viên</a>
                             </li>
@@ -141,7 +146,7 @@
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h6 class="card-title"><a href="<?= $linksp ?>"><?= $name ?></a></h6>
-                                        <p class="card-text"><?= $price ?>đ</p>
+                                        <p class="card-text"><?= number_format($price, 0, ',', '.') ?>đ</p>
                                     </div>
                                 </div>
                             </div>

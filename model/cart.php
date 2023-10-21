@@ -36,7 +36,7 @@ function viewcart($del)
                             <td>' . $cart[1] . '</td>
                             <td>' . $cart[3] . '</td>
                             <td>' . $cart[4] . '</td>
-                            <td>' . $ttien . 'đ</td>
+                            <td>' . number_format($ttien, 0, ',', '.') . 'đ</td>
                             ' . $xoasp_td . '
                         </tr>
                     ';
@@ -45,7 +45,7 @@ function viewcart($del)
     echo '
                     <tr>
                         <td colspan="4">Tổng đơn hàng</td>
-                        <td class="text-danger"><b>' . $tong . 'đ</b></td>
+                        <td class="text-danger"><b>' . number_format($tong, 0, ',', '.') . 'đ</b></td>
                         ' . $xoasp_td2 . '
                     </tr>
                 ';
@@ -74,7 +74,7 @@ function bill_chi_tiet($listbill)
                             <td>' . $cart['name'] . '</td>
                             <td>' . $cart['price'] . '</td>
                             <td>' . $cart['soluong'] . '</td>
-                            <td>' . $cart['thanhtien'] . 'đ</td>
+                            <td>' . number_format($cart['thanhtien'], 0, ',', '.') . 'đ</td>
                         </tr>
                     ';
         $i += 1;
@@ -82,7 +82,7 @@ function bill_chi_tiet($listbill)
     echo '
                     <tr>
                         <td colspan="4">Tổng đơn hàng</td>
-                        <td class="text-danger"><b>' . $tong . 'đ</b></td>
+                        <td class="text-danger"><b>' . number_format($tong, 0, ',', '.') . 'đ</b></td>
                     </tr>
                 ';
 }

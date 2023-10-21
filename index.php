@@ -102,6 +102,20 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "view/taikhoan/edit_taikhoan.php";
             break;
 
+        case 'doimk':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $id = $_POST['id'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $email = $_POST['email'];
+                
+                update_matkhau($id, $user, $email, $pass);
+                $_SESSION['user'] = checkuser($user, $pass);
+                $thongbao = "Cập nhật thành công!";
+            }
+            include "view/taikhoan/doimk.php";
+            break;
+
         case 'quenmk':
             if (isset($_POST['guiemail']) && $_POST['guiemail']) {
                 $email = $_POST['email'];

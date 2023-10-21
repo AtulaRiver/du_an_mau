@@ -44,7 +44,7 @@
                 <td><?= $id ?></td>
                 <td><?= $name ?> </td>
                 <td><?= $hinh ?> </td>
-                <td><?= $price ?> </td>
+                <td><?= number_format($price, 0, ',', '.') ?>đ</td>
                 <td><?= $luotxem ?> </td>
                 <td>
                     <a href="<?= $suasp ?>"><input type="button" value="Sửa" class="btn btn-primary"></a>
