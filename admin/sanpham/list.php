@@ -79,5 +79,6 @@
         <input type="reset" value="Bỏ chọn tất cả" class="btn btn-secondary">
         <input type="reset" value="Xoá các mục đã chọn" class="btn btn-danger">
         <a href="index.php?act=addsp"><input type="submit" value="Nhập thêm" class="btn btn-primary"></a>
+        <a href="index.php?act=bieudosp"><input type="submit" value="Biểu đồ BL theo SP" class="btn btn-info text-white"></a>
     </div>
 </div>

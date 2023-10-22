@@ -6,10 +6,9 @@
         google.charts.load("current", {
             packages: ["corechart"]
         });
-        google.charts.setOnLoadCallback(draw1);
-        google.charts.setOnLoadCallback(draw2);
+        google.charts.setOnLoadCallback(drawChart);
 
-        function draw1() {
+        function drawChart() {
             // var data = google.visualization.arrayToDataTable([
             //   ['Task', 'Hours per Day'],
             //   ['Work',     11],
@@ -19,27 +18,26 @@
             //   ['Sleep',    7]
             // ]);
             var data = google.visualization.arrayToDataTable([
-                ['Danh mục', 'Số lượng'],
-                <?php foreach ($dsthongke as $thongke) : ?>
-                    <?php extract($thongke); ?>['<?= $name ?>', <?= $soluong ?>],
+                ['Bình luận', 'Số lượng'],
+                <?php foreach ($listsanpham as $sanpham) : ?>
+                    <?php extract($sanpham); ?>
+                    ['<?= $name ?>', <?= $soBinhLuan ?>],
                 <?php endforeach; ?>
             ]);
 
             var options = {
-                title: 'BIỂU ĐỒ SỐ LƯỢNG SẢN PHẨM TRONG DANH MỤC',
+                title: 'BIỂU ĐỒ SỐ LƯỢNG BÌNH LUẬN TRONG SẢN PHẨM',
                 is3D: true,
             };
 
-            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
+            var chart = new google.visualization.BarChart(document.getElementById('piechart_3d'));
             chart.draw(data, options);
-            
         }
     </script>
 </head>
 
 <body>
-    <div id="piechart_3d_1" style="width: 1000px; height: 600px; margin-left: 450px;"></div>
+    <div id="piechart_3d" style="width: 1000px; height: 600px; margin-left: 300px;"></div>
 </body>
 
 </html>
-

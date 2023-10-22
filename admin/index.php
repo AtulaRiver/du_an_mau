@@ -127,6 +127,11 @@ if (isset($_GET['act'])) {
             $listsanpham = loadall_sanpham();
             include 'sanpham/list.php';
             break;
+        
+        case 'bieudosp':
+            $listsanpham = loadall_sanpham_bieudo();
+            include 'sanpham/bieudo.php';
+            break;
 
         case 'dskh':
             $listtaikhoan = loadall_taikhoan();
@@ -237,6 +242,8 @@ if (isset($_GET['act'])) {
         
         case 'thongke':
             $dsthongke = load_thongke_sanpham_danhmuc();
+            $listsanpham = loadall_sanpham_bieudo();
+            
             include "thongke/list.php";
             break;
 

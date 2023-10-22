@@ -9,13 +9,12 @@ function insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan)
 function loadall_binhluan($idpro)
 {
 
-    $sql = "select bl.noidung, bl.ngaybinhluan, tk.name 
-    from binhluan bl
-    join taikhoan tk on bl.iduser = tk.id
-    join sanpham sp on bl.idpro = sp.id
-    where sp.id = $idpro;
-    ";
-    return pdo_query($sql);
+    $sql = "select * from binhluan where 1";
+    if ($idpro > 0) {
+        $sql .= " and idpro = '" . $idpro . "'";
+    } else {
+        $sql .= " order by id desc";
+    }
 
     return $listbinhluan = pdo_query($sql);
 }
@@ -26,6 +25,15 @@ function delete_binhluan($id)
     pdo_query($sql);
 }
 
-function get_binhluan($idsp) {
+function loadall_binhluan_bieudo($idpro)
+{
+
+    $sql = "select *, count(bl.id) 'soBinhLuan' from sanpham sp
+    join binhluan bl on bl.idpro = sp.id
+    where 1
+    group by sp.id
+    order by sp.id desc    
+    ";
+    return pdo_query($sql);
 
 }

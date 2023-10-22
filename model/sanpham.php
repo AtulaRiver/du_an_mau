@@ -23,6 +23,24 @@ function loadall_sanpham($kyw = "", $iddm = 0)
     $sql .= " order by id desc";
     return $listsanpham = pdo_query($sql);
 }
+
+function loadall_sanpham_bieudo($kyw = "", $iddm = 0)
+{
+    $sql = "select *, count(bl.id) 'soBinhLuan' from sanpham sp
+    join binhluan bl on bl.idpro = sp.id
+    where 1
+    group by sp.id
+    ;
+    ";
+    if ($kyw != "") {
+        $sql .= " and name like '%" . $kyw . "%'";
+    }
+    if ($iddm > 0) {
+        $sql .= " and iddm = '" . $iddm . "'";
+    }
+    $sql .= " order by sp.id desc";
+    return $listsanpham = pdo_query($sql);
+}
 function loadall_sanpham_top10()
 {
     $sql = "select * from sanpham where 1 order by luotxem desc limit 0,10";
