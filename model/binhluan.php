@@ -49,3 +49,4 @@ function loadall_binhluan_bieudo($idpro)
     return pdo_query($sql);
 
 }
+//      }   else    {   return      false; }    //
