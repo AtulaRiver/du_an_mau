@@ -47,6 +47,5 @@ function loadall_binhluan_bieudo($idpro)
     order by sp.id desc    
     ";
     return pdo_query($sql);
-
 }
 //      }   else    {   return      false; }    //
