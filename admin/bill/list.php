@@ -35,7 +35,7 @@
                     <p class="float-start">SĐT: <?= $bill['bill_tel']; ?></p>
                 </td>
                 <td><?= $countsp ?></td>
-                <td><b class="text-danger"><?= $bill['total'] ?></b></td>
+                <td><b class="text-danger"><?= number_format($bill['total'], 0, ',', '.') ?>đ</b></td>
                 <td><?= $ttdh ?></td>
                 <td><?= $bill['ngaydathang'] ?></td>
                 <td>

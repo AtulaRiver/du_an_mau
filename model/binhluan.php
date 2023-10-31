@@ -18,6 +18,18 @@ function loadall_binhluan($idpro)
 
     return $listbinhluan = pdo_query($sql);
 }
+function loadall_binhluan_taikhoan($idpro)
+{
+
+    $sql = "select * from binhluan bl join taikhoan tk on bl.iduser = tk.id where 1";
+    if ($idpro > 0) {
+        $sql .= " and idpro = '" . $idpro . "'";
+    } else {
+        $sql .= " order by id desc";
+    }
+
+    return $listbinhluan = pdo_query($sql);
+}
 
 function delete_binhluan($id)
 {

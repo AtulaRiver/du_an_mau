@@ -6,7 +6,7 @@
                 <div>
                     <label for=""><b>Danh mục:</b></label>
                     <select name="iddm" id="" class="form-control">
-                        <?php foreach ($listdanhmuc as $danhmuc): ?>
+                        <?php foreach ($listdanhmuc as $danhmuc) : ?>
                             <?php extract($danhmuc); ?>
                             <option value="<?= $id ?>"><?= $name ?></option>
                         <?php endforeach ?>
@@ -33,11 +33,14 @@
                     <input type="reset" value="Nhập lại" class="btn btn-primary">
                     <a href="index.php?act=listsp"><input type="button" value="Danh sách" class="btn btn-info text-light"></a>
                 </div>
-                <?php
-                if (isset($thongbao) && $thongbao != "") {
-                    echo $thongbao;
-                }
-                ?>
+                <h4 class="text-danger mt-3">
+                    <?php
+                    if (isset($thongbao) && $thongbao != "") {
+                        echo $thongbao;
+                    }
+                    
+                    ?>
+                </h4>
             </form>
         </div>
     </div>

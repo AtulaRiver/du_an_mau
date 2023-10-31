@@ -18,7 +18,28 @@
                 <td><?= $name ?> </td>
                 <td>
                     <a href="<?= $suadm ?>"><input type="button" value="Sửa" class="btn btn-primary"></a>
-                    <a href="<?= $xoadm ?>"><input type="button" value="Xoá" class="btn btn-danger"></a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Xoá
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Xoá danh mục</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có muốn xoá danh mục?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                                    <a href="<?= $xoadm ?>"><button type="button" class="btn btn-primary">Xoá</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php endforeach ?>

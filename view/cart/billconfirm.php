@@ -4,7 +4,7 @@
             <p style="margin-top: 400px;">Cảm ơn</p>
         </div>
         <div class="img-heading">
-            <img src="/assets/img/Opera Snapshot_2023-02-11_163927_phuclong.com.vn.png" alt="">
+ <img src="https://phuclong.com.vn/images/icon_tealeaves.png" alt="">
         </div>
         <div class="nav-content">
 
@@ -12,6 +12,7 @@
     </div>
 </div>
 <?php
+
 if (isset($bill) && is_array($bill)) {
     extract($bill);
 }
@@ -24,7 +25,7 @@ if (isset($bill) && is_array($bill)) {
                 <div class="card-body box-content">
                     <li>Mã đơn hàng: DAM - <?= $bill['id'] ?></li>
                     <li>Ngày đặt hàng: <?= $bill['ngaydathang'] ?></li>
-                    <li>Tổng đơn hàng: <?= $bill['total'] ?></li>
+                    <li>Tổng đơn hàng: <?= number_format($bill['total'], 0, ',', '.')  ?>đ</li>
                     <li>Phương thức thanh toán: <?= $bill['bill_pttt'] ?></li>
                     <div class="mb-3 row">
                         <label for="" class="ms-4 mt-3">Người đặt hàng: <?= $bill['bill_name'] ?></label>
@@ -49,6 +50,7 @@ if (isset($bill) && is_array($bill)) {
 
                 <table class="my-3 table table-bordered text-center align-middle" style="width: 96%; margin: auto;">
                     <?php
+
                     bill_chi_tiet($billct);
                     ?>
 

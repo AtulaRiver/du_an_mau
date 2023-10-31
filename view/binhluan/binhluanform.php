@@ -3,7 +3,7 @@ session_start();
 include "../../model/pdo.php";
 include "../../model/binhluan.php";
 $idpro = $_REQUEST['idpro'];
-$dsbl = loadall_binhluan($idpro);
+$dsbl = loadall_binhluan_taikhoan($idpro);
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $dsbl = loadall_binhluan($idpro);
                         <td><?= $noidung ?></td>
                         <td><?= $ngaybinhluan ?></td>
                     </tr>
-                    
+
                 <?php endforeach; ?>
             </table>
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
@@ -43,6 +43,7 @@ $dsbl = loadall_binhluan($idpro);
             </form>
             <?php
             if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $idpro = $_POST['idpro'];
                 $noidung = $_POST['noidung'];
                 $iduser = $_SESSION['user']['id'];

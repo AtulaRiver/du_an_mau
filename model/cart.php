@@ -34,7 +34,7 @@ function viewcart($del)
                         <tr>
                             <td><img src="' . $hinh . '" height="80px" alt=""></td>
                             <td>' . $cart[1] . '</td>
-                            <td>' . $cart[3] . '</td>
+                            <td>' . number_format($cart[3], 0, ',', '.') . 'đ</td>
                             <td>' . $cart[4] . '</td>
                             <td>' . number_format($ttien, 0, ',', '.') . 'đ</td>
                             ' . $xoasp_td . '
@@ -72,7 +72,7 @@ function bill_chi_tiet($listbill)
                         <tr>
                             <td><img src="' . $hinh . '" height="80px" alt=""></td>
                             <td>' . $cart['name'] . '</td>
-                            <td>' . $cart['price'] . '</td>
+                            <td>' .  number_format($cart['price'], 0, ',', '.') . 'đ</td>
                             <td>' . $cart['soluong'] . '</td>
                             <td>' . number_format($cart['thanhtien'], 0, ',', '.') . 'đ</td>
                         </tr>
@@ -125,10 +125,10 @@ function loadall_bill($kyw = "", $iduser = 0)
         $sql .= " and iduser = " . $iduser;
     }
     if ($kyw != "") {
-        $sql .= " and id like '%" . $iduser . "%'";
+        $sql .= " and id like '%" . $kyw . "%'";
     }
     $sql .= " order by id desc";
-    return $listbill = pdo_query($sql);
+    return pdo_query($sql);
 }
 function loadall_cart_count($idbill)
 {

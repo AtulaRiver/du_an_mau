@@ -16,11 +16,13 @@
                     <input type="reset" value="Nhập lại" class="btn btn-primary">
                     <a href="index.php?act=listdm"><input type="button" value="Danh sách" class="btn btn-info text-light"></a>
                 </div>
+                <h4 class="text-danger mt-3">
                 <?php 
                     if(isset($thongbao) && $thongbao != "") {
                         echo $thongbao;
                     }
                 ?>
+                </h4>
             </form>
         </div>
     </div>

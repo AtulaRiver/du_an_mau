@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+
 include 'model/pdo.php';
 include 'model/danhmuc.php';
 include 'model/sanpham.php';
@@ -141,7 +142,7 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $spadd = [$id, $name, $img, $price, $soluong, $ttien];
                 array_push($_SESSION['mycart'], $spadd);
             }
-            include 'view/cart/viewcart.php';
+            include "view/cart/addtocart.php";
             break;
 
         case 'delcart':
@@ -158,6 +159,7 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             break;
 
         case 'billconfirm':
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             if (isset($_POST['dongydathang']) && $_POST['dongydathang']) {
                 if(isset($_SESSION['user'])) $iduser = $_SESSION['user']['id'];
                 else $id = 0;
